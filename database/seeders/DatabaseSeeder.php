@@ -11,17 +11,21 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
+     // User::factory(10)->create();
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-        $this->call(AdminSeeder::class);
-        $this->call(UserTypeSeeder::class);
-        $this->call(SettingSeeder::class);
+        $this->call([
+        DrainageSeeder::class,
+        GroupSeeder::class,
+        GenusSeeder::class,
+        OrderSeeder::class,
+        PhylumSeeder::class,
+        SectionSeeder::class,
+        TypeSeeder::class,
+        FamilySeeder::class,
+        PlantSeeder::class,
+        TagSeeder::class,
+        PlantTagSeeder::class,
+    ]);
     }
 }
